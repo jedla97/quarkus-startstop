@@ -145,7 +145,7 @@ jobs:
       matrix:
         java: [ 11 ]
         graalvm-version: [ "mandrel-latest" ]
-        graalvm-java-version: [ "17" ]
+        graalvm-java-version: [ "21" ]
     steps:
       - uses: actions/checkout@v3
       - name: Install JDK {{ matrix.java }}
