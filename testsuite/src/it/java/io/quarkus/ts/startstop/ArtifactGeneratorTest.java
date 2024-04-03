@@ -204,7 +204,7 @@ public class ArtifactGeneratorTest {
     };
 
     public static final String[] supportedReactiveExtensionsSubsetSetB = new String[]{
-            "quarkus-jaxrs-client",
+            "quarkus-rest-client-jaxrs",
             "quarkus-rest",
             "quarkus-rest-jsonb",
             "quarkus-rest-client",
