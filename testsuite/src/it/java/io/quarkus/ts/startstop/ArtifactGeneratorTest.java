@@ -3,6 +3,7 @@ package io.quarkus.ts.startstop;
 import static io.quarkus.ts.startstop.utils.Commands.adjustPrettyPrintForJsonLogging;
 import static io.quarkus.ts.startstop.utils.Commands.cleanDirOrFile;
 import static io.quarkus.ts.startstop.utils.Commands.confAppPropsForSkeleton;
+import static io.quarkus.ts.startstop.utils.Commands.confIndexPageForSkeleton;
 import static io.quarkus.ts.startstop.utils.Commands.copyFileForSkeleton;
 import static io.quarkus.ts.startstop.utils.Commands.dropEntityAnnotations;
 import static io.quarkus.ts.startstop.utils.Commands.getArtifactGeneBaseDir;
@@ -293,6 +294,7 @@ public class ArtifactGeneratorTest {
 
             // Config, see app-generated-skeleton/README.md
             confAppPropsForSkeleton(appDir.getAbsolutePath());
+            confIndexPageForSkeleton(appDir.getAbsolutePath());
             adjustPrettyPrintForJsonLogging(appDir.getAbsolutePath());
             dropEntityAnnotations(appDir.getAbsolutePath());
             if (StringUtils.isBlank(System.getProperty("gh.actions"))) {
@@ -308,7 +310,7 @@ public class ArtifactGeneratorTest {
             pA = runCommand(runCmd, appDir, runLogA);
             // Test web pages
             // The reason for a seemingly large timeout of 20 minutes is that dev mode will be downloading the Internet on the first fresh run.
-            long timeoutS = (flags.contains(TestFlags.WARM_UP) ? 20 * 60 : 120);
+            long timeoutS = (flags.contains(TestFlags.WARM_UP) ? 20 * 10 : 120);
             long timeToFirstOKRequest = WebpageTester.testWeb(skeletonApp.urlContent[0][0], timeoutS,
                     skeletonApp.urlContent[0][1], !flags.contains(TestFlags.WARM_UP));
 
