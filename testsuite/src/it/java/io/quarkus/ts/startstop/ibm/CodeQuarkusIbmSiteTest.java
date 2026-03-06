@@ -57,7 +57,7 @@ public class CodeQuarkusIbmSiteTest {
     @BeforeAll
     public void init(){
         Playwright playwright = Playwright.create();
-        Browser browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(true));
+        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true));
         Browser.NewContextOptions options = new Browser.NewContextOptions();
         options.ignoreHTTPSErrors = true;
         browserContext = browser.newContext(options);
