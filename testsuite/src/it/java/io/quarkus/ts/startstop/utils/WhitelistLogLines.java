@@ -13,7 +13,7 @@ public enum WhitelistLogLines {
             // https://github.com/quarkusio/quarkus/pull/28810
             Pattern.compile(".*Stream is closed, ignoring and trying to continue.*"),
             // To be able to run on Quarkus < 3.2 which does not support analytics
-            Pattern.compile(".*Unrecognized configuration key \"quarkus.analytics.disabled\" was provided.*"),
+            Pattern.compile(".*Unrecognized configuration property quarkus.analytics.disabled was provided.*"),
             // arquillian-bom has wrong sha1 and md5sum, discussed with jfang who uploaded it, there is nothing he can do about it
             Pattern.compile(".*Checksum validation failed, expected 2811ba27a71a8bda0602161ffe2f6e1429da8068 but is 36257165a0945753efb3f9d473d86c6f4c6c6f6e.*"),
             Pattern.compile(".*Could not validate integrity of download from https://repo.maven.apache.org/maven2/org/jboss/arquillian/arquillian-bom/1.7.0.Final/arquillian-bom-1.7.0.Final.pom.*"),
@@ -21,7 +21,7 @@ public enum WhitelistLogLines {
             // netty 4 which doesn't have the relevant native config in the lib. See https://github.com/netty/netty/pull/13596
             Pattern.compile(".*Warning: Please re-evaluate whether any experimental option is required, and either remove or unlock it\\..*"),
             Pattern.compile(".*Warning: The option '-H:ReflectionConfigurationResources=META-INF/native-image/io\\.netty/netty-transport/reflection-config\\.json' is experimental and must be enabled via.*"),
-            Pattern.compile(".*Unrecognized configuration key \"quarkus.version\" was provided.*"),
+            Pattern.compile(".*Unrecognized configuration property quarkus.version was provided.*"),
             ///////////////////////
             // OpenJDK 25 support
             ///////////////////////
@@ -63,7 +63,7 @@ public enum WhitelistLogLines {
             // netty 4 which doesn't have the relevant native config in the lib. See https://github.com/netty/netty/pull/13596
             Pattern.compile(".*Warning: Please re-evaluate whether any experimental option is required, and either remove or unlock it\\..*"),
             Pattern.compile(".*Warning: The option '-H:ReflectionConfigurationResources=META-INF/native-image/io\\.netty/netty-transport/reflection-config\\.json' is experimental and must be enabled via.*"),
-            Pattern.compile(".*Unrecognized configuration key \"quarkus.version\" was provided.*"),
+            Pattern.compile(".*Unrecognized configuration property quarkus.version was provided.*"),
             ///////////////////////
             // OpenJDK 25 support
             ///////////////////////
@@ -98,7 +98,7 @@ public enum WhitelistLogLines {
             Pattern.compile(".*The Agroal dependency is present but no JDBC datasources have been defined.*"),
             Pattern.compile(".*The Datasource Reactive dependency is present but no Reactive datasources have been defined.*"),
             // Due to our not exactly accurate application.properties, these expected warnings occur...
-            Pattern.compile(".*Unrecognized configuration key[ \\\\\"]*(" +
+            Pattern.compile(".*Unrecognized configuration property[ \\\\\"]*(" +
                     "quarkus.oidc.auth-server-url|" +
                     "quarkus.oidc.client-id|" +
                     "quarkus.oidc-client.auth-server-url|" +
@@ -183,15 +183,15 @@ public enum WhitelistLogLines {
             Pattern.compile(".*WARNING: Please consider reporting this to the maintainers of class com\\.google\\.inject\\.internal\\.aop\\.HiddenClassDefiner.*"),
             Pattern.compile(".*WARNING: sun\\.misc\\.Unsafe::staticFieldBase will be removed in a future release.*"),
             // Remove when https://github.com/quarkusio/quarkus/issues/51556 is fixed
-            Pattern.compile(".*Unrecognized configuration key \"quarkus.messaging.incoming.words-in.auto.offset.reset\" was provided.*"),
+            Pattern.compile(".*Unrecognized configuration property quarkus.messaging.incoming.words-in.auto.offset.reset was provided.*"),
             // TODO remove this when https://github.com/quarkusio/quarkus/issues/51990#issuecomment-3846976974 is fixed
             Pattern.compile(".*The Maven extensions for the Quarkus Maven plugin are not enabled for this build.*"),
             // TODO remove this when https://github.com/quarkusio/quarkus/issues/41016#issuecomment-3847062608 is fixed
             Pattern.compile(".*Option 'DynamicProxyConfigurationResources' is deprecated and might be removed in a future release.*"),
             // Needed because of early init of infinispan-client done in https://github.com/quarkusio/quarkus/pull/52142
             Pattern.compile(".*ISPN004001: Could not find 'hotrod-client.properties' file in classpath, using defaults.*"),
-            Pattern.compile(".*Unrecognized configuration key \"quarkus.infinispan-client.hosts\" was provided.*"),
-            Pattern.compile(".*Unrecognized configuration key \"quarkus.infinispan-client.username\" was provided.*"),
+            Pattern.compile(".*Unrecognized configuration property quarkus.infinispan-client.hosts was provided.*"),
+            Pattern.compile(".*Unrecognized configuration property quarkus.infinispan-client.username was provided.*"),
             // TODO remove this when https://github.com/quarkiverse/quarkus-mcp-server/issues/641 is fixed
             Pattern.compile(".*Cross-Origin Resource Sharing \\(CORS\\) filter must be enabled for Streamable HTTP MCP server endpoints.*"),
             // GH Actions Windows runners and Netty DNS config warning
