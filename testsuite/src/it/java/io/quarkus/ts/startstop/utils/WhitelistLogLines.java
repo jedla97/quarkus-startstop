@@ -218,6 +218,11 @@ public enum WhitelistLogLines {
             Pattern.compile("\\[ERROR\\] *"),
             // GH Actions runners are sometimes slow
             Pattern.compile("\\[io.ver.cor.imp.BlockedThreadChecker\\] (vertx-blocked-thread-checker) Thread.*has been blocked for.*"),
+            // https://github.com/quarkusio/quarkus/issues/57200
+            Pattern.compile("(?s).*java.lang.foreign.SymbolLookup has been called.*"),
+            Pattern.compile("(?s).*java.lang.foreign.SymbolLookup::libraryLookup has been called by org.aesh.terminal.tty.impl.WinConsoleNative.*"),
+            Pattern.compile(".*WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module.*"),
+            Pattern.compile(".*WARNING: Restricted methods will be blocked in a future release unless native access is enabled.*"),
     });
     
     // Depending to the OS and also on the Quarkus extensions, the Native build might print some warnings about duplicate entries
