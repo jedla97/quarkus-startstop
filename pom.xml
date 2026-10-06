@@ -7,12 +7,12 @@
     <packaging>pom</packaging>
     <name>Quarkus StartStop TS: Parent</name>
     <properties>
-        <quarkus.version>3.39.4</quarkus.version>
+        <quarkus.version>4.0.0.Beta1</quarkus.version>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus-ide-config.version>3.40.0</quarkus-ide-config.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <maven.compiler.release>17</maven.compiler.release>
+        <quarkus-ide-config.version>4.0.0.Beta1</quarkus-ide-config.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <maven.compiler.version>3.16.0</maven.compiler.version>
         <maven.surefire.version>3.6.0</maven.surefire.version>
         <maven.failsafe.version>3.6.0</maven.failsafe.version>
