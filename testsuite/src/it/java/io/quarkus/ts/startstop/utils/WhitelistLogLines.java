@@ -206,6 +206,11 @@ public enum WhitelistLogLines {
             Pattern.compile(".*OpenTelemetry API usage issue detected.*"),
             // stacktrace line is falsely marked as an error log entry because the .onError() method gets picked by warnErrorDetectionPattern
             Pattern.compile(".*onError.*"),
+            // https://github.com/quarkusio/quarkus/issues/57200
+            Pattern.compile(".*restricted method in java.lang.foreign.SymbolLookup.*"),
+            Pattern.compile(".*java.lang.foreign.SymbolLookup::libraryLookup has been called by org.aesh.terminal.tty.impl.WinConsoleNative.*"),
+            Pattern.compile(".*WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module.*"),
+            Pattern.compile(".*WARNING: Restricted methods will be blocked in a future release unless native access is enabled.*"),
     }),
     // Quarkus is not being gratefully shutdown in Windows when running in Dev mode.
     // Reported by https://github.com/quarkusio/quarkus/issues/14647.
@@ -218,11 +223,6 @@ public enum WhitelistLogLines {
             Pattern.compile("\\[ERROR\\] *"),
             // GH Actions runners are sometimes slow
             Pattern.compile("\\[io.ver.cor.imp.BlockedThreadChecker\\] (vertx-blocked-thread-checker) Thread.*has been blocked for.*"),
-            // https://github.com/quarkusio/quarkus/issues/57200
-            Pattern.compile(".*WARNING: A restricted method in java\\.lang\\.foreign\\.SymbolLookup has been called*"),
-            Pattern.compile(".*java\\.lang\\.foreign\\.SymbolLookup.*"),
-            Pattern.compile(".*WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module.*"),
-            Pattern.compile(".*WARNING: Restricted methods will be blocked in a future release unless native access is enabled.*"),
     });
     
     // Depending to the OS and also on the Quarkus extensions, the Native build might print some warnings about duplicate entries
