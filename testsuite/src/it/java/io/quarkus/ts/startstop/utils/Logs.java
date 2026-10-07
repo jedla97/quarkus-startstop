@@ -81,6 +81,9 @@ public class Logs {
             // And https://github.com/quarkusio/quarkus/pull/15541/files#diff-a38e0d86cf6a637c19b6e0a0e23959f644886bdcc0f0e5615ce7cfa0e6bc9909R244
             if (Commands.isThisWindows && isDevModeError(offendingLines)) {
                 Stream.of(WhitelistLogLines.WINDOWS_DEV_MODE_ERRORS.errs).forEach(lineToIgnore -> offendingLines.removeIf(line -> lineToIgnore.matcher(line).matches()));
+                System.out.println("offending Line JEDLA:");
+                offendingLines.forEach(System.out::println);
+                System.out.println("End offending Line JEDLA");
             }
 
             assertTrue(offendingLines.isEmpty(),
